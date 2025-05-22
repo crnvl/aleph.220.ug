@@ -16,7 +16,7 @@
 
   min-width: 150%;
   min-height: 150%;
-  z-index: -2;
+  z-index: -5;
 }
 
 .top-banner {
@@ -74,9 +74,20 @@ body::before {
   background-size: auto;
   background-repeat: repeat;
   background-attachment: fixed;
-  opacity: 0.75;
-  z-index: -1;
+  opacity: 0.66;
+  z-index: -4;
   pointer-events: none;
+}
+
+.bg3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
 }
 
 body a {
