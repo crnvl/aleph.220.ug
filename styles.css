@@ -19,6 +19,25 @@
   z-index: -2;
 }
 
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-banner div {
+  max-width: 100vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .glow {
   color: var(--subtitle-color);
   --glow-strength: 1;
@@ -84,6 +103,7 @@ header {
   width: 200px;
   height: 100vh;
   border: 1px solid var(--border-color);
+  top: 25px;
   position: fixed;
   z-index: 5;
 }
