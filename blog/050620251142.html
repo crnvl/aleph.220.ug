@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wordle autosolver</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="flex">
+            <div class="left">
+                <main>
+                    <article class="intro" id="blog">
+                        <div class="subtitle">wordle autosolver</div>
+                        <p><strong>written on 06/05/2025 11:43 AM</strong></p>
+                        <p>
+                            i was kinda bored and i played wordle for a few days in the past couple weeks so i built a little autosolver.
+                            i am aware this is nothing special at all and there's probably a hundred other people that built one too but whatever, i think its cool so here goes:
+                            <br />
+                            <br />
+                            my idea was to analyze all english 5-letter words for their letter frequency at each position of a word. 
+                            i got a set of over 12k words from some random site and threw that into a jupyter notebook. the chart for that looks as follows:
+                        </p>
+                        <img src="/public/letter_counts_chart.png" alt="letter distribution chart" />
+                        <p>
+                            aaand if you <b>really</b> care, here's the letter frequency for each position:
+                        </p>
+                        <img src="/public/letter_counts_position_1.png" alt="position 1 letter frequency" />
+                        <img src="/public/letter_counts_position_2.png" alt="position 2 letter frequency" />
+                        <img src="/public/letter_counts_position_3.png" alt="position 3 letter frequency" />
+                        <img src="/public/letter_counts_position_4.png" alt="position 4 letter frequency" />
+                        <img src="/public/letter_counts_position_5.png" alt="position 5 letter frequency" />
+
+                        <p>
+                            from there, i added a pattern specifier for my solver, so letters that are not contained within the correct word,
+                            letters that are contained but not at a certain position
+                            and of course correct positions for letters.
+                            <br/>
+                            i also wrote a little function to determine a probability score for each word based on which letters are at what position and how common that condition is.
+                            <br/>
+                            with those two things, writing a solver function wasn't really a challenge anymore, so my script just checks through all words in the textfiles 
+                            and collects those that match the specified pattern. when finished, they're sorted by their previously assigned score and the 10 most likely
+                            words are outputted.
+                            <br/>
+                            i didnt really bother to write a script that does everything automatically as i had better things to do, but that's also very easily possible if you care that much.
+                            in my experience, the auto solver solves most commonly at the 4th try, which is decent i guess, but my list of words also has a lot of words, wordle would
+                            never choose for a solution as the actual amount of answer options for wordle is just around 2k words while i check for over 12k.
+                            <br/>
+                            if you have a list of only those words, my solver would probably perform way better.
+                            if you care that much tho, maybe also consider suggesting words with no duplicate letters if the pattern is empty (which means it's probably the first try) 
+                            to cover more letters as the current most likely word outputted by my script is "SORES" which contains an S twice and there's only a very very tiny chance
+                            this word will actually be the solution so why bother trying to get it right on the first try.
+                        </p>
+                        <p>
+                            <br />
+                            <br />
+                            <a href="/">go home</a>
+                        </p>
+                    </article>
+
+                </main>
+            </div>
+    </div>
+    </div>
+
+    <div class="bg1" />
+    <div class="bg3" />
+</body>
+
+</html>
