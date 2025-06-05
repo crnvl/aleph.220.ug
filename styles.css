@@ -127,6 +127,11 @@ article {
   margin-right: 10px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 #blog {
   background-color: var(--bg-color);
   border: 1px solid var(--border-color);
